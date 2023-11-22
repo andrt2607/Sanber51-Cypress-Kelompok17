@@ -1,5 +1,5 @@
 # Sanber51-Cypress-Kelompok17
-## Learning automation testing QA
+## Learning Automation Testing QA
 
 <h3 align="left">-----ANGGOTA KELOMPOK 17-----</h3>
 <p align="left">1. Alif Andarta</p>
