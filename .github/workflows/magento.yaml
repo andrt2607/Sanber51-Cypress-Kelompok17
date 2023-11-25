@@ -1,0 +1,30 @@
+name: Run Luma-Magento Create an Account every 00:00 Time
+on:
+  schedule:
+    - cron: '0 17 * * *'
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run Luma-Magento Chrome
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+      - name: Cypress run Luma-Magento Firefox
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+      - name: Cypress run Luma-Magento Edge
+        uses: cypress-io/github-action@v6
+        with:
+          browser: edge
+          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
