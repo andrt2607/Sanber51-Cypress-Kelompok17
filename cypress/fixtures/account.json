@@ -1,0 +1,21 @@
+{
+    "registration": {
+        "userValid": {
+            "firstname": "Tes Magento",
+            "lastname": "QA",
+            "email": "testcy@gmail.com",
+            "password": "Test123@",
+            "strongPassword": "T3st1ngd4n",
+            "veryStrongPassword": "T3st1ngd4n!23"
+        },
+        "userInvalid": {
+            "firstname": "Tes Magento",
+            "lastname": "QA",
+            "email": "testcy@gmail.com",
+            "invalidEmail": "testcy@gmailcom",
+            "invalidPassword": "Test",
+            "password": "Test123@",
+            "classCharPassword": "123456789"
+        }
+    }
+}

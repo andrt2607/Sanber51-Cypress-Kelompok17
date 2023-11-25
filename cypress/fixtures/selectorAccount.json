@@ -1,0 +1,10 @@
+{
+    "accountEmailInputSelector": "#email_address",
+    "accountFirstnameInputSelector": "#firstname",
+    "accountLastnameInputSelector": "#lastname",
+    "newPasswordConfirmationInputSelector": "#password-confirmation",
+    "newPasswordInputSelector": "#password",
+    "accountMenuIcon": ":nth-child(2) > .customer-welcome > .customer-name > .action",
+    "accountMenuItems": ":nth-child(2) > .customer-welcome > .customer-menu > .header > .authorization-link > a",
+    "accountPasswordStrength": "#password-strength-meter"
+}
