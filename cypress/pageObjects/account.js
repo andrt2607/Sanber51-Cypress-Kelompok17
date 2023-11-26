@@ -6,9 +6,8 @@ export class Account{
         cy.get(selectors.accountLastnameInputSelector).type(lastName);
         cy.get(selectors.accountEmailInputSelector).type(email);
         cy.get(selectors.newPasswordInputSelector).type(pw);
-        cy.get(selectors.newPasswordConfirmationInputSelector).type(
-            `${pw}{enter}`
-        );
+        cy.get(selectors.newPasswordConfirmationInputSelector).type(pw);
+        cy.get(selectors.buttonCreateAnAccount).click();
     }
 
     static createNewUserStrengthPw(firstName, lastName, email, pw) {
@@ -24,9 +23,8 @@ export class Account{
         cy.get(selectors.accountLastnameInputSelector).type(lastName);
         cy.get(selectors.accountEmailInputSelector).type(email);
         cy.get(selectors.newPasswordInputSelector).type(pw);
-        cy.get(selectors.newPasswordConfirmationInputSelector).type(
-            `${pw}+1{enter}`
-        );
+        cy.get(selectors.newPasswordConfirmationInputSelector).type(pw+1);
+        cy.get(selectors.buttonCreateAnAccount).click();
     }
 
     static selectorPasswordStrength(level){
