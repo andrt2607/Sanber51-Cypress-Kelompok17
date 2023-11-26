@@ -7,7 +7,7 @@
 |-----------------|---------------|
 | Alif Andarta| Choose Product |
 | Ahmad Ikhsan Maulana| Create an Account |
-| M. Yoga Sugama| View and Update Shopping Cart |
+| M. Yoga Sugama (michikhyo)| View and Update Shopping Cart |
 | Nufikha Rizki| Login |
 | Kartika| Proceed to Checkout |
 <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
