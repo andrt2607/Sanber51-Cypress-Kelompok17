@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "web": "npx cypress run --browser chrome --spec 'cypress/e2e/web/magento/authentication/**.cy.js'",
+    "choose-product" : "npx cypress run --browser chrome --spec 'cypress/e2e/web/magento/product/**.cy.js'",
     "cypress:run:all": "npm run cypress:run -- --browser chrome,firefox,edge",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open"
