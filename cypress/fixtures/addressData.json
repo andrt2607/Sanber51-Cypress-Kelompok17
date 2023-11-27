@@ -1,0 +1,18 @@
+{
+    "addAddress":{
+        "addressValid":{
+            "email":"rizqikartika@gmail.com",
+            "password":"password123@",
+            "firstname":"Rizqi Kartika",
+            "lastname":"Safitri",
+            "company":"PT SUKSES",
+            "street":"Madaharsa Street",
+            "city":"Denver",
+            "region":"Colorado",
+            "postcode":"81658",
+            "country":"United States",
+            "telephone":"720232343"
+        }
+
+    }
+}

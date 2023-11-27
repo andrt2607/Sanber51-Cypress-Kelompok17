@@ -38,6 +38,21 @@ jobs:
         with:
           browser: edge
           spec: cypress/e2e/web/magento/product/choose-product.cy.js
+      - name: Cypress run Luma-Magento Chrome (Checkout)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          spec: cypress/e2e/web/magento/checkout/proceedCheckout.cy.js
+      - name: Cypress run Luma-Magento Firefox (Checkout)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          spec: cypress/e2e/web/magento/checkout/proceedCheckout.cy.js
+      - name: Cypress run Luma-Magento Edge (Checkout)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: edge
+          spec: cypress/e2e/web/magento/checkout/proceedCheckout.cy.js
       - uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots

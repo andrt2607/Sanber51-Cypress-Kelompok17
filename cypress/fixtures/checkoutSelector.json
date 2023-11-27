@@ -1,0 +1,16 @@
+{
+    "cartIcon":".showcart",
+    "viewItem":".action.viewcart",
+    "waitItem":".mark > strong",
+    "buttonProceedtoCheckout":".checkout-methods-items > :nth-child(1) > .action > span",
+    "tablerateBestway": "input[type=\"radio\"][value=\"tablerate_bestway\"]",
+    "tablerateFlatrate": "input[type=\"radio\"][value=\"flatrate_flatrate\"]",
+    "buttonNextShipping":".button.action.continue.primary",
+    "checklistSameAddress":"input#billing-address-same-as-shipping-checkmo",
+    "buttonPlaceOrder":".payment-method-content > :nth-child(4) > div.primary > .action",
+    "buttonPlaceOrderDisabled":".action.primary.checkout.disabled",
+    "changeShipTo":".ship-to > .shipping-information-title > .action",
+    "changeShippingMeth":".ship-via > .shipping-information-title > .action",
+    "shippingAddress":".action-select-shipping-item",
+    "printReceipt":".page-title-wrapper > .action"
+}

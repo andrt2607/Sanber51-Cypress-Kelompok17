@@ -23,3 +23,26 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
+
+  Cypress.Commands.add('redirectLogin', (email, password) => {
+    // cy.visit('https://magento.softwaretestingboard.com/');
+    cy.get('.panel > .header > .authorization-link > a').click()
+    cy.get('#email').type(email)
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass'). type(password)
+    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+  });
+
+Cypress.Commands.add('addToCart', () => {
+  cy.contains('Gear').click()
+  cy.contains('watches').click()
+  cy.contains('Clamber Watch').click()
+  cy.get('#qty').clear().type('1')
+  cy.get('#product-addtocart-button',{ timeout: 10000 }).click()
+  cy.wait(5000)
+});
+
+Cypress.Commands.add('openNewTab', (url) => {
+  cy.window().then((win) => {
+    win.open(url, '_blank');
+  });
+});
