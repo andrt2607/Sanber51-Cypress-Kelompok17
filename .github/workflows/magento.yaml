@@ -23,6 +23,21 @@ jobs:
         with:
           browser: edge
           spec: cypress/e2e/web/magento/authentication/registration.cy.js
+      - name: Cypress run Luma-Magento Chrome (Choose Product)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          spec: cypress/e2e/web/magento/product/choose-product.cy.js
+      - name: Cypress run Luma-Magento Firefox (Choose Product)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          spec: cypress/e2e/web/magento/product/choose-product.cy.js
+      - name: Cypress run Luma-Magento Edge (Choose Product)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: edge
+          spec: cypress/e2e/web/magento/product/choose-product.cy.js
       - uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
