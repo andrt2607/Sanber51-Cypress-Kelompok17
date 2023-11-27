@@ -1,0 +1,26 @@
+{
+    "product" : {
+        "women" : "/women.html",
+        "men" : "/men.html",
+        "gear" : "/gear.html",
+        "topsWomen" : "women/tops-women.html",
+        "bottomWomen" : "women/bottoms-women.html",
+        "hoodiesSweatshirtsWomen" : "tops-women/hoodies-and-sweatshirts-women.html",
+        "jacketsWomen" : "tops-women/jackets-women.html",
+        "teesWomen" : "tops-women/tees-women.html",
+        "tanksWomen" : "tops-women/tanks-women.html",
+        "pantsWomen" : "bottoms-women/pants-women.html",
+        "shortsWomen" : "bottoms-women/shorts-women.html",
+        "topsMen" : "men/tops-men.html",
+        "bottomMen" : "men/bottoms-men.html",
+        "hoodiesSweatshirtsMen" : "tops-men/hoodies-and-sweatshirts-men.html",
+        "jacketsMen" : "tops-men/jackets-men.html",
+        "teesMen" : "tops-men/tees-men.html",
+        "tanksMen" : "tops-men/tanks-men.html",
+        "pantsMen" : "bottoms-men/pants-men.html",
+        "shortsMen" : "bottoms-men/shorts-men.html",
+        "bagGear" : "gear/bags.html",
+        "fitnessEquipmentGear": "gear/fitness-equipment",
+        "watchesGear": "gear/watches"
+    }
+}
