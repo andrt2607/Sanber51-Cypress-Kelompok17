@@ -65,7 +65,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     // cy.screenshot('Change Summary Successfull - Shipping to')
   })
 
-  it.only('6. Change Summary Successfull - Shipping method', () => {  
+  it('6. Change Summary Successfull - Shipping method', () => {  
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     // cy.addToCart()
     CheckoutLogin.showCart()

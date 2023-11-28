@@ -105,7 +105,7 @@ export class CheckoutLogin{
         // cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateFlatrate).click()
         cy.get(checkoutSelectors.buttonNextShipping).click().then(() => {
-            cy.wait(5000);
+            cy.wait(100000);
             cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#payment')
         })
     }
