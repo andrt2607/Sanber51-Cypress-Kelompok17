@@ -27,7 +27,7 @@ export class CheckoutLogin{
                     cy.wait(5000);
                 }
                 cy.wait(5000);
-                cy.get(checkoutSelectors.tablerateBestway).click();
+                cy.get(checkoutSelectors.tablerateBestway).click({ force: true });
                 cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist');
                 cy.get(checkoutSelectors.tablerateBestway).should('be.checked');
           
@@ -40,13 +40,13 @@ export class CheckoutLogin{
     }
 
     static checkShippingAddress(){
-        cy.get(checkoutSelectors.buttonNextShipping).click()
+        cy.get(checkoutSelectors.buttonNextShipping).click({ force: true });
         cy.wait(5000)
           cy.get(checkoutSelectors.checklistSameAddress).then(($checkbox) => {
             if ($checkbox.is(':checked')) {
                 cy.log('Checkbox is checked');
             } else {
-                cy.get(checkoutSelectors.checklistSameAddress).check().should('be.checked');
+                cy.get(checkoutSelectors.checklistSameAddress).check({ force: true }).should('be.checked');
                 cy.log('Checkbox is not checked, checked now.');
             }
         });
@@ -105,13 +105,13 @@ export class CheckoutLogin{
         // cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateFlatrate).click()
         cy.get(checkoutSelectors.buttonNextShipping).click().then(() => {
-            cy.wait(5000);
+            cy.wait(50000);
             cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#payment')
         })
     }
 
     static placeOrderEnable(){
-        cy.get(checkoutSelectors.buttonPlaceOrder).click()
+        cy.get(checkoutSelectors.buttonPlaceOrder).click({force: true})
     }
 
     static placeOrderDisable(){

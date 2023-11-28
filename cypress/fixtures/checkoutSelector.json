@@ -2,7 +2,7 @@
     "cartIcon":".showcart",
     "viewItem":".action.viewcart",
     "waitItem":".mark > strong",
-    "buttonProceedtoCheckout":".checkout-methods-items > :nth-child(1) > .action > span",
+    "buttonProceedtoCheckout":".checkout-methods-items > :nth-child(1) > .action",
     "tablerateBestway": ":nth-child(1) > :nth-child(1) > .radio",
     "tablerateFlatrate": "tbody > :nth-child(2) > :nth-child(1) > .radio",
     "buttonNextShipping":".button.action.continue.primary",
@@ -11,6 +11,6 @@
     "buttonPlaceOrderDisabled":".action.primary.checkout.disabled",
     "changeShipTo":".ship-to > .shipping-information-title > .action",
     "changeShippingMeth":".ship-via > .shipping-information-title > .action",
-    "shippingAddress":".action-select-shipping-item",
+    "shippingAddress":":nth-child(2) > .action-select-shipping-item",
     "printReceipt":".page-title-wrapper > .action"
 }
