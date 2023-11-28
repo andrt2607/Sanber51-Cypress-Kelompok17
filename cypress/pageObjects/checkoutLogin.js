@@ -116,8 +116,6 @@ export class CheckoutLogin{
         cy.contains(msg).should('exist')
         cy.wait(tmOut)
     }
-
-
 }
 
 export default CheckoutLogin;

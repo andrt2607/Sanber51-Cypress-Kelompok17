@@ -1,5 +1,5 @@
 import {CheckoutLogin} from '../../../../pageObjects/checkoutLogin.js'
-import { CheckoutNotLogin } from '../../../../pageObjects/checkoutNotLogin.js'
+import {CheckoutNotLogin} from '../../../../pageObjects/checkoutNotLogin.js'
 import addressData from '../../../../fixtures/addressData.json'
 
 describe('Checkout Testing with User Login Conditions', () => {
@@ -14,7 +14,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     CheckoutLogin.checkoutItem()
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.message('Thank you for your purchase!',1000)
-    cy.screenshot('Checkout Successfull - Same shipping & billing address')
+    // cy.screenshot('Checkout Successfull - Same shipping & billing address')
   })
 
   it('2. Checkout Successfull - With New Address', () => {
@@ -28,7 +28,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     cy.screenshot('Checkout Successfull - With New Address')
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.message('Thank you for your purchase!',1000)
-    cy.screenshot('Checkout Successfull - With New Address')
+    // cy.screenshot('Checkout Successfull - With New Address')
   })
 
   it('3. Checkout failed - Shipping method is empty', () => {  
@@ -37,7 +37,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     CheckoutLogin.showCart()
     CheckoutLogin.checkoutWithoutShipMethod()
     CheckoutLogin.message('The shipping method is missing. Select the shipping method and try again.',1000)
-    cy.screenshot('Checkout failed - Shipping method is empty')
+    // cy.screenshot('Checkout failed - Shipping method is empty')
   })
 
   it('4. Checkout failed - UnChecklist the same billing & shipping address', () => {  
@@ -46,7 +46,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     CheckoutLogin.showCart()
     CheckoutLogin.checkoutUnchecklistBillShip()
     CheckoutLogin.placeOrderDisable()
-    cy.screenshot('Checkout failed - UnChecklist the same billing & shipping address')
+    // cy.screenshot('Checkout failed - UnChecklist the same billing & shipping address')
   })
 
   it('5. Change Summary Successfull - Shipping to', () => {  
@@ -54,7 +54,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     // cy.addToCart()
     CheckoutLogin.showCart()
     CheckoutLogin.changeShipTo()
-    cy.screenshot('Change Summary Successfull - Shipping to')
+    // cy.screenshot('Change Summary Successfull - Shipping to')
   })
 
   it('6. Change Summary Successfull - Shipping method', () => {  
@@ -63,7 +63,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     CheckoutLogin.showCart()
     CheckoutLogin.changeShipMethod()
     CheckoutLogin.message('Flat Rate - Fixed',1000)
-    cy.screenshot('Change Summary Successfull - Shipping method')
+    // cy.screenshot('Change Summary Successfull - Shipping method')
   })
 
   it('7. Checkout Successfull - Print Receipt', () => {
@@ -73,6 +73,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     CheckoutLogin.checkoutItem()
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.printingReceipt() 
+    // cy.screenshot('Checkout Successfull - Print Receipt')
   })
 })
 
@@ -89,7 +90,7 @@ describe('Checkout Testing with User Not Login Conditions', () => {
       addressData.addAddress.addressValid.region, addressData.addAddress.addressValid.postcode, addressData.addAddress.addressValid.country,
       addressData.addAddress.addressValid.telephone)
     CheckoutNotLogin.message('Thank you for your purchase!',1000)
-    cy.screenshot('Checkout Successfull - Not Login - Fill out the form address without login')
+    // cy.screenshot('Checkout Successfull - Not Login - Fill out the form address without login')
   })
 
   it('2. Checkout Failed - Not Login - Empty Shipping Method', () => {
@@ -100,7 +101,7 @@ describe('Checkout Testing with User Not Login Conditions', () => {
       addressData.addAddress.addressValid.region, addressData.addAddress.addressValid.postcode, addressData.addAddress.addressValid.country,
       addressData.addAddress.addressValid.telephone)
     CheckoutNotLogin.message('The shipping method is missing. Select the shipping method and try again.',1000)
-    cy.screenshot('Checkout Failed - Not Login - Empty Shipping Method')
+    // cy.screenshot('Checkout Failed - Not Login - Empty Shipping Method')
   })
 
 })
