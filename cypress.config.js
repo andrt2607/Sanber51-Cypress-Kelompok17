@@ -6,7 +6,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 5500,
     chromeWebSecurity: false,
     screenshotOnRunFailure: true,
-    defaultCommandTimeout: 30000,
     waitForAnimations:true,
     force: true
   },

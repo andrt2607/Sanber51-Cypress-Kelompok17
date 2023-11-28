@@ -12,6 +12,8 @@ describe('Checkout Testing with User Login Conditions', () => {
     cy.addToCart()                                                       
     CheckoutLogin.showCart()
     CheckoutLogin.checkoutItem()
+    CheckoutLogin.checkRate()
+    CheckoutLogin.checkShippingAddress()
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.message('Thank you for your purchase!',1000)
     // cy.screenshot('Checkout Successfull - Same shipping & billing address')
@@ -21,11 +23,14 @@ describe('Checkout Testing with User Login Conditions', () => {
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     cy.addToCart()                                                       
     CheckoutLogin.showCart()
-    CheckoutLogin.checkoutItemNewAddress(addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
+    CheckoutLogin.checkoutItem()
+    CheckoutLogin.addNewAddress(addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
       addressData.addAddress.addressValid.company, addressData.addAddress.addressValid.street, addressData.addAddress.addressValid.city, 
       addressData.addAddress.addressValid.region, addressData.addAddress.addressValid.postcode, addressData.addAddress.addressValid.country,
       addressData.addAddress.addressValid.telephone)
-    cy.screenshot('Checkout Successfull - With New Address')
+    // cy.screenshot('Checkout Successfull - With New Address')
+    CheckoutLogin.checkRate()
+    CheckoutLogin.checkShippingAddress()
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.message('Thank you for your purchase!',1000)
     // cy.screenshot('Checkout Successfull - With New Address')
@@ -35,6 +40,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     cy.addToCart()                                                      
     CheckoutLogin.showCart()
+    CheckoutLogin.checkoutItem()
     CheckoutLogin.checkoutWithoutShipMethod()
     CheckoutLogin.message('The shipping method is missing. Select the shipping method and try again.',1000)
     // cy.screenshot('Checkout failed - Shipping method is empty')
@@ -42,8 +48,9 @@ describe('Checkout Testing with User Login Conditions', () => {
 
   it('4. Checkout failed - UnChecklist the same billing & shipping address', () => {  
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
-    // cy.addToCart()
+    cy.addToCart()
     CheckoutLogin.showCart()
+    CheckoutLogin.checkoutItem()
     CheckoutLogin.checkoutUnchecklistBillShip()
     CheckoutLogin.placeOrderDisable()
     // cy.screenshot('Checkout failed - UnChecklist the same billing & shipping address')
@@ -53,17 +60,19 @@ describe('Checkout Testing with User Login Conditions', () => {
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     // cy.addToCart()
     CheckoutLogin.showCart()
+    CheckoutLogin.checkoutItem()
     CheckoutLogin.changeShipTo()
     // cy.screenshot('Change Summary Successfull - Shipping to')
   })
 
-  it('6. Change Summary Successfull - Shipping method', () => {  
+  it.only('6. Change Summary Successfull - Shipping method', () => {  
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     // cy.addToCart()
     CheckoutLogin.showCart()
-    CheckoutLogin.changeShipMethod()
+    CheckoutLogin.checkoutItem()
+    CheckoutLogin.changeShippingMethod()
     CheckoutLogin.message('Flat Rate - Fixed',1000)
-    // cy.screenshot('Change Summary Successfull - Shipping method')
+    cy.screenshot('Change Summary Successfull - Shipping method')
   })
 
   it('7. Checkout Successfull - Print Receipt', () => {

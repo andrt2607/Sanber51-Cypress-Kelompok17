@@ -6,36 +6,53 @@ export class CheckoutLogin{
         cy.get(checkoutSelectors.cartIcon).click()
         cy.wait(5000)
         cy.get(checkoutSelectors.viewItem).should('exist').click({force: true})
-        cy.get(checkoutSelectors.waitItem).should('exist')
+        // cy.get(checkoutSelectors.waitItem).should('exist')
     }
 
     static checkoutItem(){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
-        cy.get(checkoutSelectors.tablerateBestway).should('not.be.checked').then(($radioButton) => {
-            if (!$radioButton.is(':checked')) {
-              cy.get(checkoutSelectors.tablerateBestway).check();
-            }
-        });
-        cy.get(checkoutSelectors.tablerateFlatrate).should('not.be.checked').then(($radioButton) => {
-            if (!$radioButton.is(':checked')) {
-              cy.get(checkoutSelectors.tablerateFlatrate).check();
-            }
-        });
-        cy.get(checkoutSelectors.buttonNextShipping).click()
         cy.wait(5000)
-        cy.get(checkoutSelectors.checklistSameAddress).then(($checkbox) => {
-            if ($checkbox.is(':checked')) {
-                cy.log('Checkbox is checked')
-            } else {
-                cy.get(checkoutSelectors.checklistSameAddress).uncheck();
-                cy.get(checkoutSelectors.checklistSameAddress).click().should('be.checked');
-                cy.log('Checkbox is not checked')
-            }
-          });
+        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
     }
 
-    static checkoutItemNewAddress(firstName,lastName,company,street,city,region,postcode,country,telephone){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
+    static checkRate(){
+        cy.get('#checkout-loader', { timeout: 300000 }).should('not.exist');
+        cy.get('.table-checkout-shipping-method tbody tr .radio').then(($elements) => {
+            let jumlahData=$elements.length;
+            cy.log('jumlah data:'+jumlahData)
+            if(jumlahData>1){
+                for (let index = 2; index < jumlahData; index++) {
+                    cy.get(':nth-child('+index+') > :nth-child(1) > .radio').click();
+                     cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist');
+                    cy.get(':nth-child('+index+') > :nth-child(1) > .radio').should('be.checked');
+                    cy.wait(5000);
+                }
+                cy.wait(5000);
+                cy.get(checkoutSelectors.tablerateBestway).click();
+                cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist');
+                cy.get(checkoutSelectors.tablerateBestway).should('be.checked');
+          
+            }else{
+                cy.get(checkoutSelectors.tablerateBestway).click();
+                cy.get(checkoutSelectors.tablerateBestway).should('be.checked');
+                cy.wait(5000);
+            }
+        });
+    }
+
+    static checkShippingAddress(){
+        cy.get(checkoutSelectors.buttonNextShipping).click()
+        cy.wait(5000)
+          cy.get(checkoutSelectors.checklistSameAddress).then(($checkbox) => {
+            if ($checkbox.is(':checked')) {
+                cy.log('Checkbox is checked');
+            } else {
+                cy.get(checkoutSelectors.checklistSameAddress).check().should('be.checked');
+                cy.log('Checkbox is not checked, checked now.');
+            }
+        });
+    }
+
+    static addNewAddress(firstName,lastName,company,street,city,region,postcode,country,telephone){
         cy.get(addressSelectors.buttonAddAddress).click()
         cy.get(addressSelectors.addressFirstnameInput).clear().type(firstName)
         cy.get(addressSelectors.addressLastnameInput).clear().type(lastName)
@@ -48,18 +65,10 @@ export class CheckoutLogin{
         cy.get(addressSelectors.addressPhoneInput).type(telephone)
         cy.get(addressSelectors.saveAddressBook).should('be.checked')
         cy.contains(addressSelectors.buttonSaveAddress).click()
-        cy.wait(5000)
-        cy.get(checkoutSelectors.tablerateBestway).check()
-        cy.get(checkoutSelectors.buttonNextShipping).click()
-        cy.wait(5000)
-        cy.get(checkoutSelectors.checklistSameAddress).click().should('be.checked');
     }
 
     static checkoutWithoutShipMethod(){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick().then(() => {
-            cy.wait(5000);
-            cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#shipping')
-        })
+        cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateBestway).should('not.be.checked')
         cy.get(checkoutSelectors.tablerateFlatrate).should('not.be.checked')
         cy.get(checkoutSelectors.buttonNextShipping).click()
@@ -70,14 +79,14 @@ export class CheckoutLogin{
     }
 
     static checkoutUnchecklistBillShip(){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
+        cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateBestway).check()
         cy.get(checkoutSelectors.buttonNextShipping).click()
         cy.get(checkoutSelectors.checklistSameAddress, { timeout: 10000 }).uncheck()
     }
 
     static changeShipTo(){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
+        cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateBestway).check()
         cy.get(checkoutSelectors.buttonNextShipping).click()
         cy.get(checkoutSelectors.changeShipTo).click()
@@ -88,12 +97,13 @@ export class CheckoutLogin{
         })
     }
 
-    static changeShipMethod(){
-        cy.get(checkoutSelectors.buttonProceedtoCheckout).dblclick()
+    static changeShippingMethod(){
+        cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateBestway).check()
         cy.get(checkoutSelectors.buttonNextShipping).click()
         cy.get(checkoutSelectors.changeShippingMeth).click()
-        cy.get(checkoutSelectors.tablerateFlatrate).check()
+        // cy.get('.loading-mask',{ timeout: 300000 }).should('not.exist')
+        cy.get(checkoutSelectors.tablerateFlatrate).check('be.checked')
         cy.get(checkoutSelectors.buttonNextShipping).click().then(() => {
             cy.wait(5000);
             cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#payment')
