@@ -1,7 +1,5 @@
-name: Run Luma-Magento Create an Account every 00:00 Time
-on:
-  schedule:
-    - cron: '0 17 * * *'
+name: Run Luma-Magento Create an Account, Login, Choose Product, View and Update Shopping Cart, Proceed to Checkout every 00:00 Time
+on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -12,17 +10,17 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+          spec: cypress/e2e/web/magento/account/**.cy.js
       - name: Cypress run Luma-Magento Firefox
         uses: cypress-io/github-action@v6
         with:
           browser: firefox
-          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+          spec: cypress/e2e/web/magento/account/**.cy.js
       - name: Cypress run Luma-Magento Edge
         uses: cypress-io/github-action@v6
         with:
           browser: edge
-          spec: cypress/e2e/web/magento/authentication/registration.cy.js
+          spec: cypress/e2e/web/magento/account/**.cy.js
       - name: Cypress run Luma-Magento Chrome (Choose Product)
         uses: cypress-io/github-action@v6
         with:
