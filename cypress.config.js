@@ -4,6 +4,9 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://magento.softwaretestingboard.com/',
     defaultCommandTimeout: 5500,
-    chromeWebSecurity: false
+    chromeWebSecurity: false,
+    screenshotOnRunFailure: true,
+    waitForAnimations:true,
+    force: true
   },
 });

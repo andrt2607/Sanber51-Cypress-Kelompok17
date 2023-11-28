@@ -1,0 +1,17 @@
+{
+    "emailInput":"#customer-email",
+    "passwordInput":"#customer-password",
+    "buttonLogin":".action.login.primary",
+    "addressFirstnameInput":"[name=\"firstname\"]",
+    "addressLastnameInput":"[name=\"lastname\"]",
+    "addressCompanyInput":"[name=\"company\"]",
+    "addressStreetInput":"[name=\"street[0]\"]",
+    "addressCityInput":"[name=\"city\"]",
+    "addressRegionInput":"[name=\"region_id\"]",
+    "addressPostcodeInput":"[name=\"postcode\"]",
+    "addressCountryInput":"[name=\"country_id\"]",
+    "addressPhoneInput":"[name=\"telephone\"]",
+    "buttonAddAddress":".action.action-show-popup",
+    "saveAddressBook":"#shipping-save-in-address-book",
+    "buttonSaveAddress":"Ship here"
+}
