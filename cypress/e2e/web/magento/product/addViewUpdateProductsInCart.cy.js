@@ -22,7 +22,7 @@ describe('template spec', () => {
     // Klik button checkout
     cy.get('.checkout-methods-items > :nth-child(1) > .action').click()
 
-    // NOTE: Banyak code yang menggunakan wait digunakan sebagai delay, agar sistem dapat ditampilkan dengan baik
+    // NOTE: Banyak code yang menggunakan wait digunakan sebagai delay, agar sistem dapat ditampilkan dengan baik - M. Yoga Sugama (Michikhyo)
     
   })
 })

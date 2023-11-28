@@ -6,7 +6,7 @@
 | Nama        | Fitur    |
 |-----------------|---------------|
 | Alif Andarta| Choose Product |
-| Ahmad Ikhsan Maulana| Create an Account |
+| Ahmad Ikhsan Maulana| Create an Account, Account Activites |
 | M. Yoga Sugama (michikhyo)| View and Update Shopping Cart |
 | Nufikha Rizki| Login |
 | Rizqi Kartika S| Proceed to Checkout |
