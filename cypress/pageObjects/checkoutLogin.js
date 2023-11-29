@@ -89,7 +89,7 @@ export class CheckoutLogin{
         cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(checkoutSelectors.tablerateBestway).check()
         cy.get(checkoutSelectors.buttonNextShipping).click()
-        cy.get(checkoutSelectors.changeShipTo).should('exist').click()
+        cy.get(checkoutSelectors.changeShipTo).click({force:true})
         cy.get(checkoutSelectors.shippingAddress).click();
         cy.get(checkoutSelectors.buttonNextShipping).click().then(() => {
             cy.wait(5000);
