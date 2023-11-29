@@ -37,12 +37,7 @@ Cypress.Commands.add('addToCart', () => {
   cy.contains('watches').click()
   cy.contains('Clamber Watch').click()
   cy.get('#qty').clear().type('1')
+  cy.wait(2000)
   cy.get('#product-addtocart-button',{ timeout: 10000 }).click()
   cy.wait(5000)
-});
-
-Cypress.Commands.add('openNewTab', (url) => {
-  cy.window().then((win) => {
-    win.open(url, '_blank');
-  });
 });

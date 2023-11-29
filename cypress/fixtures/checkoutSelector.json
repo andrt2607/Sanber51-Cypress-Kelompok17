@@ -11,6 +11,6 @@
     "buttonPlaceOrderDisabled":".action.primary.checkout.disabled",
     "changeShipTo":".ship-to > .shipping-information-title > .action",
     "changeShippingMeth":".ship-via > .shipping-information-title > .action",
-    "shippingAddress":":nth-child(2) > .action-select-shipping-item",
+    "shippingAddress":".action-select-shipping-item",
     "printReceipt":".page-title-wrapper > .action"
 }

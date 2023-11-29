@@ -1,6 +1,5 @@
 {
-    "emailInput":"#customer-email",
-    "passwordInput":"#customer-password",
+    "emailInput":"#customer-email-fieldset > .required > .control > #customer-email",
     "buttonLogin":".action.login.primary",
     "addressFirstnameInput":"[name=\"firstname\"]",
     "addressLastnameInput":"[name=\"lastname\"]",
@@ -11,7 +10,7 @@
     "addressPostcodeInput":"[name=\"postcode\"]",
     "addressCountryInput":"[name=\"country_id\"]",
     "addressPhoneInput":"[name=\"telephone\"]",
-    "buttonAddAddress":".action.action-show-popup",
+    "buttonAddAddress":".new-address-popup > .action",
     "saveAddressBook":"#shipping-save-in-address-book",
     "buttonSaveAddress":"Ship here"
 }
