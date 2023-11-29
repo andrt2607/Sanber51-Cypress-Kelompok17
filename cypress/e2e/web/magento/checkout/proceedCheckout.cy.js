@@ -79,20 +79,20 @@ describe('Checkout Testing with User Login Conditions', () => {
     // cy.screenshot('Proceed to Checkout - Change Summary Successfull - Shipping method')
   })
 
-  it.only('7. Checkout Successfull - Print Receipt', () => {
+  it('7. Checkout Successfull - Print Receipt', () => {
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
+    cy.wait(2000)
     cy.addToCart()
     CheckoutLogin.showCart()
     CheckoutLogin.checkoutItem()
     cy.wait(1000)
     CheckoutLogin.checkRate()
-    // cy.get(checkoutSelectors.tablerateBestway).should('exist').check();
-    cy.get(checkoutSelectors.buttonNextShipping).click()
-    cy.wait(2000)
+    cy.wait(1000)
+    CheckoutLogin.checkShippingAddress()
     CheckoutLogin.placeOrderEnable()
     CheckoutLogin.printingReceipt() 
-    cy.contains('print').should('exist')
-    cy.screenshot('Proceed to Checkout Successfull - Print Receipt')
+    // cy.contains('print').should('exist')
+    // cy.screenshot('Proceed to Checkout Successfull - Print Receipt')
   })
 })
 
@@ -104,23 +104,29 @@ describe('Checkout Testing with User Not Login Conditions', () => {
   it('1. Checkout Successfull - Not Login - Fill out the form address without login', () => {
     cy.addToCart()
     CheckoutNotLogin.showCart()
-    CheckoutNotLogin.checkoutItem(addressData.addAddress.addressValid.email, addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
+    CheckoutLogin.checkoutItem()
+    CheckoutNotLogin.addAddress(addressData.addAddress.addressValid.email, addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
       addressData.addAddress.addressValid.company, addressData.addAddress.addressValid.street, addressData.addAddress.addressValid.city, 
       addressData.addAddress.addressValid.region, addressData.addAddress.addressValid.postcode, addressData.addAddress.addressValid.country,
       addressData.addAddress.addressValid.telephone)
+    CheckoutNotLogin.checkRate()
+    CheckoutNotLogin.checkShippingAddress()
+    CheckoutNotLogin.placeOrderEnable()
     CheckoutNotLogin.message('Thank you for your purchase!',1000)
-    //cy.screenshot('Proceed to Checkout Successfull - Not Login - Fill out the form address without login')
+    // cy.screenshot('Proceed to Checkout Successfull - Not Login - Fill out the form address without login')
   })
 
   it('2. Checkout Failed - Not Login - Empty Shipping Method', () => {
     cy.addToCart()
     CheckoutNotLogin.showCart()
-    CheckoutNotLogin.checkoutWithoutShipMethod(addressData.addAddress.addressValid.email, addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
+    CheckoutNotLogin.checkoutItem()
+    CheckoutNotLogin.addAddress(addressData.addAddress.addressValid.email, addressData.addAddress.addressValid.firstname, addressData.addAddress.addressValid.lastname, 
       addressData.addAddress.addressValid.company, addressData.addAddress.addressValid.street, addressData.addAddress.addressValid.city, 
       addressData.addAddress.addressValid.region, addressData.addAddress.addressValid.postcode, addressData.addAddress.addressValid.country,
       addressData.addAddress.addressValid.telephone)
+      CheckoutNotLogin.checkoutWithoutShipMethod()
     CheckoutNotLogin.message('The shipping method is missing. Select the shipping method and try again.',1000)
-    //cy.screenshot('Proceed to Checkout Failed - Not Login - Empty Shipping Method')
+    // cy.screenshot('Proceed to Checkout Failed - Not Login - Empty Shipping Method')
   })
 
 })

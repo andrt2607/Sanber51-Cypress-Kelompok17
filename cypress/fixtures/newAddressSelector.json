@@ -1,6 +1,5 @@
 {
-    "emailInput":"#customer-email",
-    "passwordInput":"#customer-password",
+    "emailInput":"#customer-email-fieldset > .required > .control > #customer-email",
     "buttonLogin":".action.login.primary",
     "addressFirstnameInput":"[name=\"firstname\"]",
     "addressLastnameInput":"[name=\"lastname\"]",
