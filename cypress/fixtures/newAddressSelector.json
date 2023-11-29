@@ -11,7 +11,7 @@
     "addressPostcodeInput":"[name=\"postcode\"]",
     "addressCountryInput":"[name=\"country_id\"]",
     "addressPhoneInput":"[name=\"telephone\"]",
-    "buttonAddAddress":".action.action-show-popup",
+    "buttonAddAddress":".new-address-popup > .action",
     "saveAddressBook":"#shipping-save-in-address-book",
     "buttonSaveAddress":"Ship here"
 }
