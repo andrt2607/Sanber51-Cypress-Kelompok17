@@ -58,7 +58,7 @@ describe('Checkout Testing with User Login Conditions', () => {
     // cy.screenshot('Proceed to Checkout failed - UnChecklist the same billing & shipping address')
   })
 
-  it('5. Change Summary Successfull - Shipping to', () => {  
+  it('5. Change Summary Successfull - Shipping to', () => {  //kondisi hanya untuk opsi 2 alamat 
     cy.redirectLogin('rizqikartika@gmail.com','password123@')
     cy.addToCart()
     CheckoutLogin.showCart()

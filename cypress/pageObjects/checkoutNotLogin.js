@@ -54,8 +54,8 @@ export class CheckoutNotLogin{
     static addAddress(email, firstName,lastName,company,street,city,region,postcode,country,telephone){
         cy.get('#checkout-loader',{ timeout: 300000 }).should('not.exist')
         cy.get(addressSelectors.emailInput).first().type(email)
-        cy.get(addressSelectors.addressFirstnameInput).type(firstName)
-        cy.get(addressSelectors.addressLastnameInput).type(lastName)
+        cy.get(addressSelectors.addressFirstnameInput).clear().type(firstName)
+        cy.get(addressSelectors.addressLastnameInput).clear().type(lastName)
         cy.get(addressSelectors.addressCompanyInput).type(company)
         cy.get(addressSelectors.addressStreetInput).type(street)
         cy.get(addressSelectors.addressCityInput).type(city)
