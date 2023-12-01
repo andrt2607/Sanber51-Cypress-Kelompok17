@@ -17,5 +17,44 @@
             "password": "Test123@",
             "classCharPassword": "123456789"
         }
+    },
+
+    "login": {
+        "userValid": {
+            "firstname": "Jamal",
+            "lastname": "Maulana",
+            "email": "keyrokacek531@gmail.com",
+            "password": "test123@"
+        }
+    },
+
+    "userInfo": {
+        "city": "Bogor",
+        "country": "Indonesia",
+        "phone": "6281234753831",
+        "state": "West Java",
+        "streetAddress": "Street Padjajaran 1",
+        "zip": "4323424"
+    },
+
+    "tempUserInfo": {
+        "firstname": "sumber",
+        "lastname": "jaya",
+        "password": "Sumber123@"
+    },
+
+    "url": {
+        "accountAddAddress": "/customer/address/new",
+        "accountAddresses": "/customer/address",
+        "accountCreate": "/customer/account/create",
+        "accountEdit": "/customer/account/edit",
+        "accountForgottenPassword": "/customer/account/forgotpassword",
+        "accountLogin": "/customer/account/index",
+        "accountOrderHistory": "/sales/order/history",
+        "accountUrl": "/customer/account",
+        "review": "/review/customer/",
+        "downloadable": "/downloadable/customer/products/",
+        "payment": "/vault/cards/listaction/",
+        "wishlist": "/wishlist"
     }
 }
