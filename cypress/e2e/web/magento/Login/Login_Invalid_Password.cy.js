@@ -6,5 +6,6 @@ describe('Verify Login', () => {
     cy.get('#pass').type('0000abc')
     cy.get('#send2').click()
     cy.get('.message-error').should('contain','The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.')
+    cy.screenshoot()
   })
 });

@@ -5,5 +5,6 @@ describe('Verify Login', () => {
       cy.get('#email').type('nufikharizki@gmail.com')
       cy.get('#pass').type('123Abc000')
       cy.get('#send2').click()
+      cy.screenshoot()
     })
   });
