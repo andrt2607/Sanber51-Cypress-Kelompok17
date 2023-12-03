@@ -7,5 +7,6 @@ describe('Verify Forgot Password Functionality', () => {
       cy.get('#email_address').type('nufikharizki@gmail.com')
       cy.get('#form-validate > .actions-toolbar > div.primary > .action > span').click()
       cy.get('.message-success').should('If there is an account associated with nufikharizki@gmail.com you will receive an email with a link to reset your password.')
+      cy.screenshoot()
     })
   });

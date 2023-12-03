@@ -6,5 +6,6 @@ describe('Verify Login', () => {
       cy.get('#pass')
       cy.get('#send2').click()
       cy.get('.message-error > div').should('A login and a password are required.')
+      cy.screenshoot()
     })
   });
